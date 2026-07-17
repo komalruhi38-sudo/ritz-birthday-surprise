@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 HAPPY BIRTHDAY RITZ! 🎉</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            animation: bgShift 15s ease infinite;
+        }
+
+        @keyframes bgShift {
+            0%, 100% { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+            50% { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            margin: 20px;
+        }
+
+        h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb, #f5576c);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: #764ba2;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .countdown {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+            font-size: 1.2em;
+        }
+
+        .countdown-text {
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .countdown-items {
+            display: flex;
+            justify-content: space-around;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            min-width: 80px;
+        }
+
+        .countdown-number {
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .countdown-label {
+            font-size: 0.8em;
+            margin-top: 5px;
+        }
+
+        .wishes {
+            margin: 40px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+
+        .wishes h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .wish-card {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 5px solid #f5576c;
+            border-radius: 8px;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .fun-facts {
+            margin: 40px 0;
+            padding: 20px;
+            background: #fff9e6;
+            border-radius: 15px;
+        }
+
+        .fun-facts h2 {
+            color: #f5576c;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .fact-card {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 5px solid #667eea;
+            border-radius: 8px;
+            animation: slideIn 0.5s ease;
+        }
+
+        .gallery {
+            margin: 40px 0;
+            padding: 20px;
+            background: #f0f4ff;
+            border-radius: 15px;
+        }
+
+        .gallery h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-emoji {
+            font-size: 4em;
+        }
+
+        .buttons {
+            margin: 30px 0;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #f5576c;
+            pointer-events: none;
+        }
+
+        .balloons {
+            position: fixed;
+            font-size: 3em;
+            animation: float 6s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        .message {
+            font-size: 1.2em;
+            color: #764ba2;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+
+        .emoji-burst {
+            font-size: 2em;
+            animation: burst 1s ease;
+            position: fixed;
+            pointer-events: none;
+        }
+
+        @keyframes burst {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+        }
+
+        .music-player {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        audio {
+            width: 100%;
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 HAPPY BIRTHDAY RITZ! 🎉</h1>
+        <p class="subtitle">✨ You are absolutely AMAZING! ✨</p>
+
+        <div class="countdown">
+            <div class="countdown-text">Time to Celebrate! 🎊</div>
+            <div class="countdown-items">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">0</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">0</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">0</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">0</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="message">
+            <p>Dear Ritz,</p>
+            <p>Today is YOUR special day! 🌟</p>
+            <p>You deserve all the happiness, laughter, and love the world has to offer.</p>
+            <p>Thank you for being such an incredible person! 💖</p>
+        </div>
+
+        <div class="music-player">
+            <p><strong>🎵 Birthday Playlist 🎵</strong></p>
+            <audio controls>
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div class="wishes">
+            <h2>🎁 Birthday Wishes 🎁</h2>
+            <div class="wish-card">
+                <strong>✨ Wishing you a day filled with joy and laughter!</strong>
+            </div>
+            <div class="wish-card">
+                <strong>🌟 May all your dreams come true this year!</strong>
+            </div>
+            <div class="wish-card">
+                <strong>💖 You're an inspiration to everyone around you!</strong>
+            </div>
+            <div class="wish-card">
+                <strong>🎊 Here's to another year of amazing adventures!</strong>
+            </div>
+            <div class="wish-card">
+                <strong>🌈 Your smile brightens everyone's day!</strong>
+            </div>
+        </div>
+
+        <div class="fun-facts">
+            <h2>🌟 Fun Facts About You 🌟</h2>
+            <div class="fact-card">
+                <strong>🎯 You're one in a million - literally!</strong>
+            </div>
+            <div class="fact-card">
+                <strong>💪 Your strength and determination inspire others!</strong>
+            </div>
+            <div class="fact-card">
+                <strong>🎨 Your creativity knows no bounds!</strong>
+            </div>
+            <div class="fact-card">
+                <strong>👑 You're royalty in the hearts of those who know you!</strong>
+            </div>
+            <div class="fact-card">
+                <strong>🚀 You're destined for great things!</strong>
+            </div>
+        </div>
+
+        <div class="gallery">
+            <h2>🎈 Birthday Gallery 🎈</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-emoji">🎂</div>
+                    <p>Cake Time!</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-emoji">🎉</div>
+                    <p>Party!</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-emoji">🎈</div>
+                    <p>Balloons!</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-emoji">🎁</div>
+                    <p>Gifts!</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-emoji">🌟</div>
+                    <p>Magic!</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-emoji">💖</div>
+                    <p>Love!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button class="btn-primary" onclick="createConfetti()">🎊 Celebrate! 🎊</button>
+            <button class="btn-secondary" onclick="createBalloons()">🎈 Release Balloons! 🎈</button>
+            <button class="btn-primary" onclick="playCelebration()">🎵 Play Celebration! 🎵</button>
+        </div>
+
+        <p class="message">
+            <strong>Have the most WONDERFUL birthday ever!</strong><br>
+            You deserve the world and so much more! 🌍✨
+        </p>
+    </div>
+
+    <script>
+        function createConfetti() {
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.top = '-10px';
+                confetti.style.backgroundColor = getRandomColor();
+                confetti.style.animation = `fall ${Math.random() * 2 + 2}s linear`;
+                document.body.appendChild(confetti);
+
+                setTimeout(() => confetti.remove(), 3000);
+            }
+
+            if (!document.getElementById('confetti-style')) {
+                const style = document.createElement('style');
+                style.id = 'confetti-style';
+                style.textContent = `
+                    @keyframes fall {
+                        to {
+                            transform: translateY(100vh) rotate(360deg);
+                            opacity: 0;
+                        }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+        }
+
+        function createBalloons() {
+            const balloonEmojis = ['🎈', '🎈', '🎈', '🎈', '🎈'];
+            balloonEmojis.forEach((balloon, index) => {
+                const balloon_el = document.createElement('div');
+                balloon_el.className = 'balloons';
+                balloon_el.textContent = balloon;
+                balloon_el.style.left = Math.random() * 100 + '%';
+                balloon_el.style.animationDelay = index * 0.2 + 's';
+                document.body.appendChild(balloon_el);
+
+                setTimeout(() => balloon_el.remove(), 6000);
+            });
+        }
+
+        function getRandomColor() {
+            const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f9ca24', '#6c5ce7', '#a29bfe', '#fd79a8', '#fdcb6e'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        function playCelebration() {
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const now = audioContext.currentTime;
+
+            const notes = [523.25, 659.25, 783.99, 1046.50];
+            notes.forEach((freq, index) => {
+                const osc = audioContext.createOscillator();
+                const gain = audioContext.createGain();
+                osc.connect(gain);
+                gain.connect(audioContext.destination);
+                osc.frequency.value = freq;
+                gain.gain.setValueAtTime(0.3, now + index * 0.2);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + index * 0.2 + 0.3);
+                osc.start(now + index * 0.2);
+                osc.stop(now + index * 0.2 + 0.3);
+            });
+
+            createConfetti();
+            createBalloons();
+        }
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const today = new Date();
+            const birthday = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 23, 59, 59);
+            
+            if (now > birthday.getTime()) {
+                birthday.setFullYear(birthday.getFullYear() + 1);
+            }
+
+            const distance = birthday.getTime() - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        window.addEventListener('load', () => {
+            createConfetti();
+            createBalloons();
+        });
+
+        document.addEventListener('click', (e) => {
+            const emojis = ['✨', '🎉', '🎊', '💖', '🌟', '🎈', '🎁', '🎂'];
+            const emoji = document.createElement('div');
+            emoji.className = 'emoji-burst';
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.left = e.clientX + 'px';
+            emoji.style.top = e.clientY + 'px';
+            document.body.appendChild(emoji);
+
+            setTimeout(() => emoji.remove(), 1000);
+        });
+    </script>
+</body>
+</html>
